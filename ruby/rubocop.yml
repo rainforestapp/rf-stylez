@@ -1,0 +1,47 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  DisabledByDefault: true
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+    - '**/Gemfile'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+inherit_from:
+  ./rubocop_lint.yml
+
+# Good style cops
+Style/TrailingBlankLines:
+  Enabled: true
+Style/TrailingWhitespace:
+  Enabled: true
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always
+Style/BlockDelimiters:
+  Enabled: true
+Style/MethodName:
+  Enabled: true
+Style/DefWithParentheses:
+  Enabled: true
+Style/MethodCallParentheses:
+  Enabled: true
+Style/InfiniteLoop:
+  Enabled: true
+Style/EmptyLineBetweenDefs:
+  Enabled: true
+Style/StringLiterals:
+  Enabled: true
+Style/AndOr:
+  Enabled: true
+Style/Not:
+  Enabled: true
+Style/IndentationWidth:
+  Enabled: true
+
+# Dumb lint cops
+Lint/AmbiguousOperator:
+  Enabled: false
