@@ -8,6 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Rf::Stylez::VERSION
   spec.authors       = ['Emanuel Evans']
   spec.email         = ['emanuel@rainforestqa.com']
+  spec.license       = 'MIT'
 
   spec.summary       = %q{Styles for Rainforest code}
   spec.description   = 'Configurations for Rubocop and other style enforcers/linters'
