@@ -43,6 +43,68 @@ Style/IndentationWidth:
   Enabled: true
 Style/MutableConstant:
   Enabled: true
+Style/AccessModifierIndentation:
+  Enabled: true
+Style/AlignArray:
+  Enabled: true
+Style/AlignHash:
+  Enabled: true
+Style/AlignParameters:
+  Enabled: true
+Style/CaseIndentation:
+  Enabled: true
+Style/ClassAndModuleCamelCase:
+  Enabled: true
+Style/ClosingParenthesisIndentation:
+  Enabled: true
+Style/CommentIndentation:
+  Enabled: true
+Style/ConstantName:
+  Enabled: true
+Style/ElseAlignment:
+  Enabled: true
+Style/EmptyLines:
+  Enabled: true
+Style/EndOfLine:
+  Enabled: true
+Style/ExtraSpacing:
+  Enabled: true
+Style/FileName:
+  Enabled: true
+Style/InitialIndentation:
+  Enabled: true
+Style/HashSyntax:
+  Enabled: true
+Style/IndentationConsistency:
+  Enabled: true
+Style/IndentHash:
+  Enabled: true
+Style/LeadingCommentSpace:
+  Enabled: true
+Style/MethodName:
+  Enabled: true
+Style/RedundantFreeze:
+  Enabled: true
+Style/RescueEnsureAlignment:
+  Enabled: true
+Style/SpaceBeforeFirstArg:
+  Enabled: true
+Style/SpaceAfterColon:
+  Enabled: true
+Style/SpaceAfterComma:
+  Enabled: true
+Style/SpaceAfterMethodName:
+  Enabled: true
+Style/SpaceBeforeBlockBraces:
+  Enabled: true
+Style/SpaceBeforeComma:
+  Enabled: true
+Style/SpaceInsideParens:
+  Enabled: true
+Style/Tab:
+  Enabled: true
+Style/VariableName:
+  Enabled: true
 Metrics/LineLength:
   Enabled: true
   Max: 120
