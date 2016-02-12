@@ -43,6 +43,11 @@ Style/IndentationWidth:
   Enabled: true
 Style/MutableConstant:
   Enabled: true
+Metrics/LineLength:
+  Enabled: true
+  Max: 120
+  AllowHeredoc: true
+  AllowURI: true
 
 # Dumb lint cops
 Lint/AmbiguousOperator:
