@@ -45,3 +45,5 @@ Style/IndentationWidth:
 # Dumb lint cops
 Lint/AmbiguousOperator:
   Enabled: false
+Lint/NonLocalExitFromIterator:
+  Enabled: false
