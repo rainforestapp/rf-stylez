@@ -41,6 +41,8 @@ Style/Not:
   Enabled: true
 Style/IndentationWidth:
   Enabled: true
+Style/MutableConstant:
+  Enabled: true
 
 # Dumb lint cops
 Lint/AmbiguousOperator:
