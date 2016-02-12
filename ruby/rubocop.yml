@@ -47,3 +47,5 @@ Lint/AmbiguousOperator:
   Enabled: false
 Lint/NonLocalExitFromIterator:
   Enabled: false
+Lint/AmbiguousRegexpLiteral:
+  Enabled: false
