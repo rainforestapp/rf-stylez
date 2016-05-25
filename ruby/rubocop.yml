@@ -105,6 +105,9 @@ Style/Tab:
   Enabled: true
 Style/VariableName:
   Enabled: true
+Style/TrailingCommaInLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: consistent_comma
 Metrics/LineLength:
   Enabled: true
   Max: 120
