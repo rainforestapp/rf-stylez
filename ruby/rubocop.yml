@@ -27,7 +27,7 @@ Style/MethodName:
   Enabled: true
 Style/DefWithParentheses:
   Enabled: true
-Style/MethodCallParentheses:
+Style/MethodCallWithoutArgsParentheses:
   Enabled: true
 Style/InfiniteLoop:
   Enabled: true
