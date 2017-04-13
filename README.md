@@ -1,6 +1,6 @@
 # RF Stylez 😎
 
-This is a place for style configurations for Rainforest code.
+This is a place for style configurations for [Rainforest QA](https://www.rainforestqa.com/about/) code.
 
 ### Releasing
 
