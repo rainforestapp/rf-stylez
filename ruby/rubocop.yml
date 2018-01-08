@@ -71,12 +71,23 @@ Layout/SpaceInsideParens:
 Layout/Tab:
   Enabled: true
 
+Naming/MethodName:
+  Enabled: true
+Naming/VariableName:
+  Enabled: true
+Naming/ClassAndModuleCamelCase:
+  Enabled: true
+Naming/ConstantName:
+  Enabled: true
+Naming/FileName:
+  Enabled: true
+Naming/MethodName:
+  Enabled: true
+
 Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always
 Style/BlockDelimiters:
-  Enabled: true
-Style/MethodName:
   Enabled: true
 Style/DefWithParentheses:
   Enabled: true
@@ -92,19 +103,9 @@ Style/Not:
   Enabled: true
 Style/MutableConstant:
   Enabled: true
-Style/ClassAndModuleCamelCase:
-  Enabled: true
-Style/ConstantName:
-  Enabled: true
-Style/FileName:
-  Enabled: true
 Style/HashSyntax:
   Enabled: true
-Style/MethodName:
-  Enabled: true
 Style/RedundantFreeze:
-  Enabled: true
-Style/VariableName:
   Enabled: true
 Style/TrailingCommaInLiteral:
   Enabled: true
