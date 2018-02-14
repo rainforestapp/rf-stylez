@@ -114,6 +114,8 @@ Style/MultilineIfThen:
   Enabled: true
 Style/Semicolon:
   Enabled: true
+Style/SignalException:
+  Enabled: true
 
 Metrics/LineLength:
   Enabled: true
