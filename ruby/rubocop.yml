@@ -107,6 +107,9 @@ Style/HashSyntax:
   Enabled: true
 Style/RedundantFreeze:
   Enabled: true
+Style/TrailingCommaInArguments:
+  Enabled: true
+  EnforcedStyleForMultiline: no_comma
 Style/TrailingCommaInLiteral:
   Enabled: true
   EnforcedStyleForMultiline: consistent_comma
