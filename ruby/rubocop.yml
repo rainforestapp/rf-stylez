@@ -119,6 +119,8 @@ Style/Semicolon:
   Enabled: true
 Style/SignalException:
   Enabled: true
+Style/SymbolProc:
+  Enabled: true
 
 Metrics/LineLength:
   Enabled: true
