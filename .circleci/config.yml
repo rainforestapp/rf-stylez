@@ -1,0 +1,30 @@
+version: 2
+
+jobs:
+  gem_release:
+    docker:
+      - image: circleci/ruby:2.4.4
+    steps:
+      - checkout
+      - run:
+        name: Create .gem/credentials file
+        command: |
+          mkdir ~/.gem
+          echo "---
+            :rubygems_api_key: $RUBYGEMS_API_KEY
+          " > ~/.gem/credentials
+          chmod 600 ~/.gem/credentials
+      - run:
+        name: Release rf-stylez
+        command: rake release
+
+workflows:
+  version: 2
+  gem_release:
+    jobs:
+      - gem_release:
+        filters:
+            branches:
+              only: master
+            tags:
+              only: /^v.*/
