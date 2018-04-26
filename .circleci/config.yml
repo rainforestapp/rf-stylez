@@ -1,0 +1,20 @@
+version: 2
+
+jobs:
+  gem_release:
+    docker:
+      - image: circleci/ruby:2.4.4-node
+    steps:
+      - checkout
+      - run:
+        name: Install env dependencies
+        command: |
+          echo "It works"
+          gem --version
+          ls -al
+
+workflows:
+  version: 2
+  gem_release:
+    jobs:
+      - gem_release
