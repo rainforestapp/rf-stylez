@@ -25,8 +25,8 @@ workflows:
       - push_to_rubygems:
           filters:
             branches:
-              only:
-                - master
+              ignore:
+                - /.*/
             tags:
               only:
                 - /^v.*/
