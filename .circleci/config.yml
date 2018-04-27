@@ -16,7 +16,9 @@ jobs:
             chmod 600 ~/.gem/credentials
       - run:
           name: Release rf-stylez
-          command: rake release
+          command: |
+            gem build rf-stylez
+            gem push rf-stylez-*.gem
 
 workflows:
   version: 2
@@ -25,8 +27,8 @@ workflows:
       - push_to_rubygems:
           filters:
             branches:
-              only:
-                - master
+              ignore:
+                - /.*/
             tags:
               only:
                 - /^v.*/
