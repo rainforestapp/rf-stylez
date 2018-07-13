@@ -121,6 +121,8 @@ Style/SignalException:
   Enabled: true
 Style/SymbolProc:
   Enabled: true
+Style/RegexpLiteral:
+  Enabled: true
 
 Metrics/LineLength:
   Enabled: true
