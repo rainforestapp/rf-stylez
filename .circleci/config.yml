@@ -3,7 +3,7 @@ version: 2
 jobs:
   push_to_rubygems:
     docker:
-      - image: circleci/ruby:2.4.4
+      - image: circleci/ruby:2.5.1
     steps:
       - checkout
       - run:

@@ -1,9 +1,12 @@
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.5
   DisabledByDefault: true
   Include:
+    - '**/*.rb'
+    - '**/*.rake'
     - '**/Rakefile'
-    - '**/config.ru'
+    - '**/Guardfile'
+    - '**/*.ru'
     - '**/Gemfile'
   Exclude:
     - 'db/**/*'
@@ -14,6 +17,14 @@ inherit_from:
   ./rubocop_lint.yml
 
 # Good style cops
+Layout/BlockAlignment:
+  Enabled: true
+Layout/EndAlignment:
+  Enabled: true
+Layout/DefEndAlignment:
+  Enabled: true
+Layout/ConditionPosition:
+  Enabled: true
 Layout/TrailingBlankLines:
   Enabled: true
 Layout/TrailingWhitespace:
@@ -110,7 +121,10 @@ Style/RedundantFreeze:
 Style/TrailingCommaInArguments:
   Enabled: true
   EnforcedStyleForMultiline: no_comma
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: consistent_comma
+Style/TrailingCommaInHashLiteral:
   Enabled: true
   EnforcedStyleForMultiline: consistent_comma
 Style/MultilineIfThen:
