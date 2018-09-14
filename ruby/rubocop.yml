@@ -2,8 +2,11 @@ AllCops:
   TargetRubyVersion: 2.5
   DisabledByDefault: true
   Include:
+    - '**/*.rb'
+    - '**/*.rake'
     - '**/Rakefile'
-    - '**/config.ru'
+    - '**/Guardfile'
+    - '**/*.ru'
     - '**/Gemfile'
   Exclude:
     - 'db/**/*'
