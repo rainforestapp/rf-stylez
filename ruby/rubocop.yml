@@ -17,6 +17,14 @@ inherit_from:
   ./rubocop_lint.yml
 
 # Good style cops
+Layout/BlockAlignment:
+  Enabled: true
+Layout/EndAlignment:
+  Enabled: true
+Layout/DefEndAlignment:
+  Enabled: true
+Layout/ConditionPosition:
+  Enabled: true
 Layout/TrailingBlankLines:
   Enabled: true
 Layout/TrailingWhitespace:
