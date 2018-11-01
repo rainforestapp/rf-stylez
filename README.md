@@ -18,7 +18,7 @@ Style/HashSyntax:
   Enabled: true
 ```
 
-Then you use it install rubocop and rf-stylez locally:
+To use it install rubocop and rf-stylez locally:
 ```bash
 gem install rubocop
 gem install rf-stylez
