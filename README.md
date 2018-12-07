@@ -20,6 +20,5 @@ Style/HashSyntax:
 
 To use it install rubocop and rf-stylez locally:
 ```bash
-gem install rubocop
 gem install rf-stylez
 ```
