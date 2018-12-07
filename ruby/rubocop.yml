@@ -16,6 +16,14 @@ AllCops:
 inherit_from:
   ./rubocop_lint.yml
 
+require:
+  - rf/stylez
+
+Lint/NoENV:
+  Enabled: true
+Lint/NoHTTParty:
+  Enabled: true
+
 # Good style cops
 Layout/BlockAlignment:
   Enabled: true
