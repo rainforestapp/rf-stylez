@@ -23,6 +23,8 @@ Lint/NoENV:
   Enabled: true
 Lint/NoHTTParty:
   Enabled: true
+Lint/Obscure:
+  Enabled: true
 
 # Good style cops
 Layout/BlockAlignment:

@@ -2,6 +2,7 @@ require 'rubocop'
 require 'rubocop/rspec/support'
 require_relative '../lib/rubocop/cop/lint/no_env'
 require_relative '../lib/rubocop/cop/lint/no_http_party'
+require_relative '../lib/rubocop/cop/lint/obscure'
 
 RSpec.configure do |config|
   config.include RuboCop::RSpec::ExpectOffense
