@@ -18,7 +18,7 @@ module RuboCop
       #   # bad
       #   "%s" % "string"
       #
-      # https://ruby-doc.org/core-2.4.0/doc/syntax/control_expressions_rdoc.html#label-Flip-Flop
+      # https://ruby-doc.org/core-2.4.0/String.html#method-i-25
       class Obscure < Cop
         MSG = 'Do not use the flipflop operator'.freeze
 
