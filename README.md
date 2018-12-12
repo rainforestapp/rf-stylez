@@ -4,9 +4,11 @@ This is a place for style configurations for [Rainforest QA](https://www.rainfor
 
 ### Releasing
 
-- Make sure you're an owner on rubygems.org
-- `rake release`
-
+- Make sure your changes are merged into `master` and...
+- that `VERSION` in `lib/rf/stylez/version.rb` file is updated
+- pull latest master
+- run `rake release:source_control_push`
+- CI/CD will take care of releasing rf-stylez to rubygems
 
 ## Adding `rf-stylez` to a new project
 
