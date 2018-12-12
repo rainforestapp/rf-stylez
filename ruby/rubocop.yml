@@ -105,6 +105,10 @@ Naming/FileName:
 Naming/MethodName:
   Enabled: true
 
+Style/SpecialGlobalVars:
+  Enabled: true
+Style/GlobalVars:
+  Enabled: true
 Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always
