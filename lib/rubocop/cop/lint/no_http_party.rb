@@ -5,16 +5,10 @@ module RuboCop
     module Lint
       # @example
       #   # bad
-      #   ENV[]
-      #
-      #   # bad
-      #   ENV.fetch(..)
+      #   HTTParty.get(..)
       #
       #   # good
-      #   GetEnv[]
-      #
-      #   # good
-      #   GetEnv.fetch(...)
+      #   TimedRequest.get(...)
       class NoHTTParty < Cop
         MSG = 'Prefer `TimedRequest` instead of raw `HTTParty` calls.'.freeze
 
