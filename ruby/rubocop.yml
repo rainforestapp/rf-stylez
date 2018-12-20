@@ -19,11 +19,14 @@ inherit_from:
 require:
   - rf/stylez
 
+# Custom cops
 Lint/NoENV:
   Enabled: true
 Lint/NoHTTParty:
   Enabled: true
 Lint/Obscure:
+  Enabled: true
+Lint/NoGrapeAPI:
   Enabled: true
 
 # Good style cops
