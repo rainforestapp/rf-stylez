@@ -4,6 +4,7 @@ require_relative '../lib/rubocop/cop/lint/no_env'
 require_relative '../lib/rubocop/cop/lint/no_http_party'
 require_relative '../lib/rubocop/cop/lint/obscure'
 require_relative '../lib/rubocop/cop/lint/no_grape_api'
+require_relative '../lib/rubocop/cop/lint/use_positive_int32_validator'
 
 RSpec.configure do |config|
   config.include RuboCop::RSpec::ExpectOffense
