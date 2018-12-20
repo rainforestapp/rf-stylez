@@ -28,6 +28,8 @@ Lint/Obscure:
   Enabled: true
 Lint/NoGrapeAPI:
   Enabled: true
+Lint/UserPositiveInt32Validator:
+  Enabled: true
 
 # Good style cops
 Layout/BlockAlignment:
