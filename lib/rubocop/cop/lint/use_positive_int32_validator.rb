@@ -14,7 +14,7 @@ module RuboCop
         MSG = 'If this Integer maps to a postgres Integer column, validate with `positive_int32: true`'.freeze
 
         def_node_matcher :get_require_with_integer_hash, <<~PATTERN
-        (send nil? :requires
+        (send nil? {:requires :optional}
           (sym _)
           $(hash ...) ...)
         PATTERN
