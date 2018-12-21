@@ -4,6 +4,31 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
   let(:config) { RuboCop::Config.new }
   subject(:cop) { described_class.new(config) }
 
+  it 'handles a big params with nested params and such' do
+    expect_offense(<<-RUBY.strip_indent)
+      params :example_params do
+        optional :id, type: Integer
+                      ^^^^^^^^^^^^^ If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+        optional :abc, type: String
+        optional :edf, types: [String, Array[String]]
+        optional :ghi, type: Hash, documentation: { hidden: true }
+        optional :elements, type: Array, coerce_with: abcdefg do
+          optional :zyx, type: Boolean
+          optional :id, type: Integer
+                        ^^^^^^^^^^^^^ If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+          requires :type, type: String, values: ['123', 'abc']
+          requires :element, type: Hash do
+            optional :id, type: Integer
+                          ^^^^^^^^^^^^^ If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+            optional :action, type: String
+            all_or_none_of :action, :response
+          end
+        end
+        optional :variables, type: Array[Entities::Foobar]
+      end
+    RUBY
+  end
+
   ['requires','optional'].each do |method|
     context 'registers an offense when not validating Integers in a Grape API `#{method}`' do
       it "standard" do
