@@ -28,7 +28,7 @@ Lint/Obscure:
   Enabled: true
 Lint/NoGrapeAPI:
   Enabled: true
-Lint/UserPositiveInt32Validator:
+Lint/UsePositiveInt32Validator:
   Enabled: true
 
 # Good style cops
