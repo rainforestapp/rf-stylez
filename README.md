@@ -9,6 +9,7 @@ This is a place for style configurations for [Rainforest QA](https://www.rainfor
 - pull latest master
 - run `rake release:source_control_push`
 - CI/CD will take care of releasing rf-stylez to rubygems
+- Update circlemator `bundle update rf-stylez`
 
 ## Adding `rf-stylez` to a new project
 
