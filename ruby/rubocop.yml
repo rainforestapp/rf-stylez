@@ -30,6 +30,8 @@ Lint/NoGrapeAPI:
   Enabled: true
 Lint/UsePositiveInt32Validator:
   Enabled: true
+Lint/NoJSON:
+  Enabled: true
 
 # Good style cops
 Layout/BlockAlignment:
