@@ -1,0 +1,25 @@
+# frozen_string_literal: true
+
+module RuboCop
+  module Cop
+    module Lint
+      # @example
+      #   # bad
+      #   raise 'foo'
+      #
+      #   # good
+      #   raise ArgumentError, 'foo'
+      #
+      class NoUntypedRaise < Cop
+        MSG = 'Do not raise untyped exceptions'.freeze
+
+        def_node_matcher :is_untyped_raise?, '(send nil? :raise (str ...) ...)'
+
+        def on_send(node)
+          return unless is_untyped_raise?(node)
+          add_offense(node)
+        end
+      end
+    end
+  end
+end
