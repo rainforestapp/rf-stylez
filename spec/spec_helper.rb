@@ -7,6 +7,7 @@ require_relative '../lib/rubocop/cop/lint/obscure'
 require_relative '../lib/rubocop/cop/lint/no_grape_api'
 require_relative '../lib/rubocop/cop/lint/use_positive_int32_validator'
 require_relative '../lib/rubocop/cop/lint/no_bang_state_machine_events'
+require_relative '../lib/rubocop/cop/lint/no_untyped_raise'
 
 RSpec.configure do |config|
   config.include RuboCop::RSpec::ExpectOffense
