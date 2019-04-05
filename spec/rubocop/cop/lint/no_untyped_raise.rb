@@ -28,7 +28,6 @@ describe RuboCop::Cop::Lint::NoUntypedRaise do
     end
   end
 
-
   describe 'typed' do
     context 'raise' do
       it 'registers no offense' do
