@@ -8,6 +8,8 @@ require 'rubocop/cop/lint/use_positive_int32_validator'
 
 module Rf
   module Stylez
-    # Your code goes here...
+    def self.reek_config_path
+      File.expand_path('../../ruby/reek.yml', __dir__)
+    end
   end
 end
