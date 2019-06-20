@@ -76,7 +76,7 @@ Layout/InitialIndentation:
   Enabled: true
 Layout/IndentationConsistency:
   Enabled: true
-Layout/IndentHash:
+Layout/IndentFirstHashElement:
   Enabled: true
 Layout/LeadingCommentSpace:
   Enabled: true
