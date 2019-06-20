@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rf/stylez/version'
 require 'rubocop/cop/lint/no_env'
 require 'rubocop/cop/lint/no_json'
