@@ -1,4 +1,6 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-# Specify your gem's dependencies in rf-stylez.gemspec
-gemspec
+source 'https://rubygems.org' do
+  # Specify your gem's dependencies in rf-stylez.gemspec
+  gemspec
+end
