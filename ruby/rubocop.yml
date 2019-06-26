@@ -109,8 +109,6 @@ Naming/ConstantName:
   Enabled: true
 Naming/FileName:
   Enabled: true
-Naming/MethodName:
-  Enabled: true
 
 Style/SpecialGlobalVars:
   Enabled: true
