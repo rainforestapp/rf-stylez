@@ -10,5 +10,4 @@ require "rf/stylez"
 # require "pry"
 # Pry.start
 
-require "irb"
-IRB.start
+Rf::Stylez::UpdateCheck.check
