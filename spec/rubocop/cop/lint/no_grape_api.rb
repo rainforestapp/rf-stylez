@@ -5,7 +5,7 @@ describe RuboCop::Cop::Lint::NoGrapeAPI do
   subject(:cop) { described_class.new(config) }
 
   it 'registers an offense when inheriting `Grape::API`' do
-    expect_offense(<<-RUBY.strip_indent)
+    expect_offense(<<~RUBY)
       class Foo < Grape::API
       ^^^^^^^^^^^^^^^^^^^^^^ Prefer inheriting `Api::AuthBase` or `Api::Base` instead of `Grape::API`.
         puts('foo')
@@ -14,7 +14,7 @@ describe RuboCop::Cop::Lint::NoGrapeAPI do
   end
 
   it 'does not register an offense when using `Api::AuthBase`' do
-    expect_no_offenses(<<-RUBY.strip_indent)
+    expect_no_offenses(<<~RUBY)
       class Foo < Api::AuthBase
         puts('foo')
       end
@@ -22,7 +22,7 @@ describe RuboCop::Cop::Lint::NoGrapeAPI do
   end
 
   it 'does not register an offense when using `Api::AuthBase`' do
-    expect_no_offenses(<<-RUBY.strip_indent)
+    expect_no_offenses(<<~RUBY)
       class Foo < Api::Base
         puts('foo')
       end
@@ -30,7 +30,7 @@ describe RuboCop::Cop::Lint::NoGrapeAPI do
   end
 
   it 'does not register an offense when using `Grape::API::Helpers`' do
-    expect_no_offenses(<<-RUBY.strip_indent)
+    expect_no_offenses(<<~RUBY)
       module Api::Helpers::Run
         extend Grape::API::Helpers
       end

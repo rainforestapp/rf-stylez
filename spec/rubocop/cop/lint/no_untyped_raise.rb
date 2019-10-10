@@ -7,7 +7,7 @@ describe RuboCop::Cop::Lint::NoUntypedRaise do
   describe 'untyped' do
     context 'raise' do
       it 'registers an offense' do
-        expect_offense(<<-RUBY.strip_indent)
+        expect_offense(<<~RUBY)
           def foo
             raise 'foo'
             ^^^^^^^^^^^ Do not raise untyped exceptions, specify the error type so it can be rescued specifically.
@@ -18,7 +18,7 @@ describe RuboCop::Cop::Lint::NoUntypedRaise do
 
     context 'fail' do
       it 'registers an offense' do
-        expect_offense(<<-RUBY.strip_indent)
+        expect_offense(<<~RUBY)
           def foo
             fail 'foo'
             ^^^^^^^^^^ Do not raise untyped exceptions, specify the error type so it can be rescued specifically.
@@ -31,7 +31,7 @@ describe RuboCop::Cop::Lint::NoUntypedRaise do
   describe 'typed' do
     context 'raise' do
       it 'registers no offense' do
-        expect_no_offenses(<<-RUBY.strip_indent)
+        expect_no_offenses(<<~RUBY)
         def foo
           raise ArgumentError, 'foo'
         end
@@ -41,7 +41,7 @@ describe RuboCop::Cop::Lint::NoUntypedRaise do
 
     context 'fail' do
       it 'registers no offense' do
-        expect_no_offenses(<<-RUBY.strip_indent)
+        expect_no_offenses(<<~RUBY)
         def foo
           fail ArgumentError, 'foo'
         end
