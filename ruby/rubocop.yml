@@ -42,7 +42,7 @@ Layout/DefEndAlignment:
   Enabled: true
 Layout/ConditionPosition:
   Enabled: true
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   Enabled: true
 Layout/TrailingWhitespace:
   Enabled: true
@@ -52,11 +52,11 @@ Layout/IndentationWidth:
   Enabled: true
 Layout/AccessModifierIndentation:
   Enabled: true
-Layout/AlignArray:
+Layout/ArrayAlignment:
   Enabled: true
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: true
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   Enabled: true
 Layout/CaseIndentation:
   Enabled: true
@@ -76,7 +76,7 @@ Layout/InitialIndentation:
   Enabled: true
 Layout/IndentationConsistency:
   Enabled: true
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   Enabled: true
 Layout/LeadingCommentSpace:
   Enabled: true
@@ -157,7 +157,7 @@ Style/SymbolProc:
 Style/RegexpLiteral:
   Enabled: true
 
-Metrics/LineLength:
+Layout/LineLength:
   Enabled: true
   Max: 120
   AllowHeredoc: true
