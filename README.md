@@ -13,15 +13,23 @@ This is a place for style configurations for [Rainforest QA](https://www.rainfor
 
 ## Adding `rf-stylez` to a new project
 
+### For Ruby projects
 Create a `.rubocop.yml` in the root project directory and paste the following:
 ```yml
 inherit_gem:
   rf-stylez: ruby/rubocop.yml
-Style/HashSyntax:
-  Enabled: true
 ```
 
-To use it install rubocop and rf-stylez locally:
+### For Rails projects
+Create a `.rubocop.yml` in the root project directory and paste the following:
+```yml
+inherit_gem:
+  rf-stylez:
+    - ruby/rubocop.yml
+    - rails/rubocop.yml
+```
+
+To use it you'll need to install rf-stylez locally:
 ```bash
 gem install rf-stylez
 ```
