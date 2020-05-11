@@ -14,7 +14,7 @@ module RuboCop
       #     requires :id, type: Integer, positive_int32: true
       #   end
       class UsePositiveInt32Validator < Cop
-        MSG = 'If this Integer maps to a postgres Integer column, validate with `positive_int32: true`'.freeze
+        MSG = 'If this Integer maps to a postgres Integer column, validate with `positive_int32: true`'
 
         # if a params block, return all the nodes in it
         def_node_matcher :is_grape_params?, '(block (send nil? :params) (args) $...)'
