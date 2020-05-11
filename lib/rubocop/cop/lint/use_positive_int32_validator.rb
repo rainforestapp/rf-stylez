@@ -16,8 +16,6 @@ module RuboCop
       class UsePositiveInt32Validator < Cop
         MSG = 'If this Integer maps to a postgres Integer column, validate with `positive_int32: true`'
 
-        # if a params block, return all the nodes in it
-        def_node_matcher :is_grape_params?, '(block (send nil? :params) (args) $...)'
         # check if the param is `requires` / `optional`
         def_node_search :find_params_hashes, <<~PATTERN
         (send nil? {:requires :optional}
@@ -30,10 +28,8 @@ module RuboCop
         def_node_search :validates_integer?, '(pair (sym :positive_int32) (true))'
 
         def on_block(node)
-          params = is_grape_params?(node)
-          return unless 
-          hash = find_params_hashes(node)
-          hash&.each do |param|
+          return unless (hash = find_params_hashes(node))
+          hash.each do |param|
             if is_type_integer?(param) && !validates_integer?(param)
               add_offense(param)
             end
