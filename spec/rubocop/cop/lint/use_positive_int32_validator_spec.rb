@@ -29,7 +29,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
     RUBY
   end
 
-  ['requires','optional'].each do |method|
+  %w(requires optional).each do |method|
     context 'registers an offense when not validating Integers in a Grape API `#{method}`' do
       specify do
         expect_offense(<<~RUBY)
@@ -40,7 +40,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         RUBY
       end
 
-      it "handles different parameter orders" do
+      it 'handles different parameter orders' do
         expect_offense(<<~RUBY)
           params do
             #{method} :id, desc: 'Comment ID', type: Integer
@@ -49,7 +49,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         RUBY
       end
 
-      it "handles multiple arguments" do
+      it 'handles multiple arguments' do
         expect_offense(<<~RUBY)
         params do
           #{method} :id, type: Integer, desc: 'Comment ID'
@@ -59,7 +59,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         RUBY
       end
 
-      it "handles multiple arguments, in mixed order" do
+      it 'handles multiple arguments, in mixed order' do
         expect_offense(<<~RUBY)
         params do
           requires :text, type: String
@@ -72,7 +72,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         RUBY
       end
 
-      it "handles named params blocks" do
+      it 'handles named params blocks' do
         expect_offense(<<~RUBY)
         params :test do
           #{method} :id, type: Integer, desc: 'Comment ID'
@@ -101,6 +101,26 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         expect_no_offenses(<<~RUBY)
           params :test do
             #{method} :id, type: Integer, desc: 'Comment ID', documentation: { blah: 'blah' }, positive_int32: true
+          end
+        RUBY
+      end
+    end
+
+    context 'does not register an offense when positive_int32 is false' do
+      specify do
+        expect_no_offenses(<<~RUBY)
+          params :test do
+            #{method} :id, type: Integer, desc: 'Comment ID', positive_int32: false
+          end
+        RUBY
+      end
+    end
+
+    context 'does not register an offense when positive_int32 takes in a value' do
+      specify do
+        expect_no_offenses(<<~RUBY)
+          params :test do
+            #{method} :id, type: Integer, desc: 'Comment ID', positive_int32: -1
           end
         RUBY
       end
