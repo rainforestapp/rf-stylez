@@ -105,5 +105,25 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         RUBY
       end
     end
+
+    context 'does not register an offense when positive_int32 is false' do
+      specify do
+        expect_no_offenses(<<~RUBY)
+          params :test do
+            #{method} :id, type: Integer, desc: 'Comment ID', positive_int32: false
+          end
+        RUBY
+      end
+    end
+
+    context 'does not register an offense when positive_int32 takes in a value' do
+      specify do
+        expect_no_offenses(<<~RUBY)
+          params :test do
+            #{method} :id, type: Integer, desc: 'Comment ID', positive_int32: -1
+          end
+        RUBY
+      end
+    end
   end
 end

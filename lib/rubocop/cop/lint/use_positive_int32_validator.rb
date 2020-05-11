@@ -25,7 +25,7 @@ module RuboCop
         # check if hash contains `type: Integer`
         def_node_search :is_type_integer?, '(pair (sym :type) (const nil? :Integer))'
         # check if the hash contains the `positive_int32` validator
-        def_node_search :validates_integer?, '(pair (sym :positive_int32) (true))'
+        def_node_search :validates_integer?, '(pair (sym :positive_int32) {{true false} (int _)})'
 
         def on_block(node)
           return unless (hash = find_params_hashes(node))
