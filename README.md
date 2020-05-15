@@ -33,3 +33,8 @@ To use it you'll need to install rf-stylez locally:
 ```bash
 gem install rf-stylez
 ```
+
+To check if you version is the latest on (for example in a git hook)
+```bash
+rf-stylez check-latest
+```
