@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "rf/stylez"
+
+command = ARGV.first
+unless command == 'check'
+  STDERR.puts('Usage: rf-stylez check')
+  return
+end
+
+Rf::Stylez::UpdateCheck.check
