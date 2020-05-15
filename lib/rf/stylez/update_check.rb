@@ -4,6 +4,8 @@ require 'json'
 require 'net/http'
 require 'logger'
 
+require 'semantic_versioning'
+
 module Rf
   module Stylez
     module UpdateCheck
@@ -11,15 +13,18 @@ module Rf
 
       def self.check
         logger = Logger.new(STDOUT)
+        current_version = SemanticVersioning::Version.new(VERSION)
 
-        remote_version = JSON.parse(Net::HTTP.get(RUBYGEMS_URL))['version']
-        if remote_version == VERSION
+        remote_version = SemanticVersioning::Version.new(
+          JSON.parse(Net::HTTP.get(RUBYGEMS_URL))['version']
+        )
+        if current_version >= remote_version
           logger.info('You are running latest rf-stylez ')
           logger.info('(•_•) ( •_•)>⌐■-■ (⌐■_■)')
         else
           logger.warn('RF Stylez is out of date!')
           logger.warn("Newest version is: #{remote_version}")
-          logger.warn('You are running: #{VERSION}')
+          logger.warn("You are running: #{current_version}")
           logger.warn('Please update: `gem update rf-stylez`')
         end
       rescue SocketError
