@@ -15,12 +15,13 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/rainforestapp/rf-stylez'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.bindir        = 'bin'
+  spec.executables   = ['rf-stylez']
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'rubocop', '>= 0.59', '< 0.81'
   spec.add_runtime_dependency 'rubocop-rails', '~> 2.5.0'
+  spec.add_runtime_dependency 'semantic_versioning', '~> 0.2'
 
   spec.add_development_dependency 'bundler', '~> 1.10'
   spec.add_development_dependency 'rake', '~> 13.0'

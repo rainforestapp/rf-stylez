@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "rf/stylez"
+
+command = ARGV.first
+unless command == 'check-latest'
+  STDERR.puts('Usage: rf-stylez check-latest')
+  return
+end
+
+Rf::Stylez::UpdateCheck.check
