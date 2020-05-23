@@ -18,6 +18,7 @@ inherit_from:
 
 require:
   - rf/stylez
+  - rubocop-rspec
 
 # Custom cops
 Lint/NoENV:
