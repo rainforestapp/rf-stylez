@@ -3,7 +3,7 @@ version: 2
 jobs:
   style_check:
     docker:
-      - image: rainforestapp/circlemator:latest
+      - image: gcr.io/rf-public-images/circlemator:latest
     steps:
       - checkout
       - run:
