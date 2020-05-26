@@ -19,6 +19,7 @@ inherit_from:
 require:
   - rf/stylez
   - rubocop-rspec
+  - get_env/cops
 
 # Custom cops
 Lint/NoENV:
