@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'rubocop', '>= 0.59', '< 0.81'
   spec.add_runtime_dependency 'rubocop-rails', '~> 2.5.0'
   spec.add_runtime_dependency 'rubocop-rspec', '~> 1.39.0'
-  spec.add_runtime_dependency 'get_env', '0.2.0.pre4'
+  spec.add_runtime_dependency 'get_env', '~> 0.2.0'
   spec.add_runtime_dependency 'semantic_versioning', '~> 0.2'
 
   spec.add_development_dependency 'bundler', '~> 1.10'
