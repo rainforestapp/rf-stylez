@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'get_env', '~> 0.2.0'
   spec.add_runtime_dependency 'semantic_versioning', '~> 0.2'
 
-  spec.add_development_dependency 'bundler', '~> 1.10'
+  spec.add_development_dependency 'bundler', '~> 2.1'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '>= 3.4'
   spec.add_development_dependency 'byebug'
