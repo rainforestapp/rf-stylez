@@ -78,6 +78,8 @@ Layout/InitialIndentation:
   Enabled: true
 Layout/IndentationConsistency:
   Enabled: true
+Layout/IndentationStyle:
+  Enabled: true
 Layout/FirstHashElementIndentation:
   Enabled: true
 Layout/LeadingCommentSpace:
@@ -98,8 +100,6 @@ Layout/SpaceBeforeComma:
   Enabled: true
 Layout/SpaceInsideParens:
   Enabled: true
-Layout/Tab:
-  Enabled: true
 
 Naming/MethodName:
   Enabled: true
@@ -112,6 +112,8 @@ Naming/ConstantName:
 Naming/FileName:
   Enabled: true
 
+Style/EndBlock:
+  Enabled: true
 Style/SpecialGlobalVars:
   Enabled: true
 Style/GlobalVars:

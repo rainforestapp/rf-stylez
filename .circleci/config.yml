@@ -3,7 +3,7 @@ version: 2
 jobs:
   style_check:
     docker:
-      - image: gcr.io/rf-public-images/circlemator:latest
+      - image: gcr.io/rf-public-images/circlemator:ef2e92d1d5af84e9a4a7a6150a736ae16693ed27
     steps:
       - checkout
       - run:
