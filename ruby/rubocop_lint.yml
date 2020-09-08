@@ -16,6 +16,10 @@ Lint/AssignmentInCondition:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#safe-assignment-in-condition'
   Enabled: true
 
+Lint/BinaryOperatorWithIdenticalOperands:
+  Description: 'This cop checks for places where binary operator has identical operands.'
+  Enabled: true
+
 Lint/CircularArgumentReference:
   Description: "Default values in optional keyword arguments and optional ordinal arguments should not refer back to the name of the argument."
   Enabled: true
@@ -50,10 +54,6 @@ Lint/EmptyEnsure:
 
 Lint/EmptyInterpolation:
   Description: 'Checks for empty string interpolation.'
-  Enabled: true
-
-Lint/EndInMethod:
-  Description: 'END blocks should not be placed inside method definitions.'
   Enabled: true
 
 Lint/EnsureReturn:
@@ -185,10 +185,6 @@ Lint/UselessAccessModifier:
 Lint/UselessAssignment:
   Description: 'Checks for useless assignment to a local variable.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#underscore-unused-vars'
-  Enabled: true
-
-Lint/UselessComparison:
-  Description: 'Checks for comparison of something with itself.'
   Enabled: true
 
 Lint/UselessElseWithoutRescue:
