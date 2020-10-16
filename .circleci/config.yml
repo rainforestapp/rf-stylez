@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 jobs:
   style_check:
@@ -13,6 +13,9 @@ jobs:
   test:
     docker:
       - image: circleci/ruby:2.7.1
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_TOKEN
     steps:
       - checkout
       - restore_cache:
@@ -45,6 +48,9 @@ jobs:
   push_to_rubygems:
     docker:
       - image: circleci/ruby:2.7.1
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_TOKEN
     steps:
       - checkout
       - run:
@@ -65,7 +71,9 @@ workflows:
   version: 2
   gem_release:
     jobs:
-      - test
+      - test:
+          context:
+            - DockerHub
       - style_check:
           filters:
             branches:
@@ -79,3 +87,5 @@ workflows:
             tags:
               only:
                 - /^v.*/
+          context:
+            - DockerHub
