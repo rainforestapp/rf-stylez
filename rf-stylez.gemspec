@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'rubocop', '~> 1.1.0'
-  spec.add_runtime_dependency 'rubocop-rails', '2.8.1'
+  spec.add_runtime_dependency 'rubocop-rails', '2.9.0'
   spec.add_runtime_dependency 'rubocop-rspec', '2.0.0.pre'
   spec.add_runtime_dependency 'get_env', '~> 0.2.0'
   spec.add_runtime_dependency 'semantic_versioning', '~> 0.2'
