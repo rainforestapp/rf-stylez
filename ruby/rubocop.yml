@@ -34,6 +34,10 @@ Lint/UsePositiveInt32Validator:
   Enabled: true
 Lint/NoJSON:
   Enabled: true
+Lint/NoVCRRecording:
+  Enabled: true
+  Include:
+    - spec/**/*
 
 # Good style cops
 Layout/BlockAlignment:
