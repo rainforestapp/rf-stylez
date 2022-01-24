@@ -176,6 +176,10 @@ Style/SymbolProc:
   Enabled: true
 Style/RegexpLiteral:
   Enabled: true
+Style/Documentation:
+  Enabled: true
+Style/DocumentationMethod:
+  Enabled: false
 
 Layout/LineLength:
   Enabled: true
