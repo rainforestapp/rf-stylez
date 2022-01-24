@@ -186,6 +186,8 @@ Layout/LineLength:
   Max: 120
   AllowHeredoc: true
   AllowURI: true
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
 
 # Dumb lint cops
 Lint/AmbiguousOperator:
