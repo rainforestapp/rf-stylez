@@ -176,12 +176,18 @@ Style/SymbolProc:
   Enabled: true
 Style/RegexpLiteral:
   Enabled: true
+Style/Documentation:
+  Enabled: true
+Style/DocumentationMethod:
+  Enabled: false
 
 Layout/LineLength:
   Enabled: true
   Max: 120
   AllowHeredoc: true
   AllowURI: true
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
 
 # Dumb lint cops
 Lint/AmbiguousOperator:
