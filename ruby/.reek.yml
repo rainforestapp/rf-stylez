@@ -1,0 +1,58 @@
+---
+### Generic smell configuration
+detectors:
+  # IrresponsibleModule duplicates rubocop top-level comment rule
+  IrresponsibleModule:
+    enabled: false
+
+  NestedIterators:
+    max_allowed_nesting: 1
+
+  UtilityFunction:
+    public_methods_only: true
+
+  TooManyStatements:
+    max_statements: 10
+
+  TooManyMethods:
+    max_methods: 20
+
+  TooManyInstanceVariables:
+    max_instance_variables: 8
+
+### Directory specific configuration
+
+# You can configure smells on a per-directory base.
+# E.g. the classic Rails case: controllers smell of NestedIterators (see /docs/Nested-Iterators.md) and
+# helpers smell of UtilityFunction (see docs/Utility-Function.md)
+#
+# Note that we only allow configuration on a directory level, not a file level,
+# so all paths have to point to directories.
+# A Dir.glob pattern can be used.
+directories:
+  "app/controllers":
+    NestedIterators:
+      max_allowed_nesting: 2
+    UnusedPrivateMethod:
+      enabled: false
+    InstanceVariableAssumption:
+      enabled: false
+  "app/helpers":
+    UtilityFunction:
+      enabled: false
+  "app/mailers":
+    InstanceVariableAssumption:
+      enabled: false
+  "app/models":
+    InstanceVariableAssumption:
+      enabled: false
+  "app/rack/api":
+    MissingSafeMethod:
+      exclude:
+        - validate_param!
+    InstanceVariableAssumption:
+      enabled: false
+
+exclude_paths:
+  - db/
+  - app/jobs/data_correction/
