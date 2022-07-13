@@ -1,5 +1,7 @@
 ---
 ### Generic smell configuration
+
+# You can check all defaults at https://github.com/troessner/reek/blob/master/docs/defaults.reek.yml
 detectors:
   # IrresponsibleModule duplicates rubocop top-level comment rule
   IrresponsibleModule:
@@ -55,4 +57,6 @@ directories:
 
 exclude_paths:
   - db/
+  - script/
+  - bin/
   - app/jobs/data_correction/
