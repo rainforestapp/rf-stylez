@@ -13,5 +13,8 @@ require 'rubocop/cop/lint/no_vcr_recording'
 
 module Rf
   module Stylez
+    def self.reek_config_path
+      File.expand_path("../../ruby/.reek.yml", __dir__)
+    end
   end
 end

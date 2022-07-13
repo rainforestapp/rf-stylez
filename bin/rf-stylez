@@ -4,9 +4,12 @@ require "bundler/setup"
 require "rf/stylez"
 
 command = ARGV.first
-unless command == 'check-latest'
-  STDERR.puts('Usage: rf-stylez check-latest')
-  return
+case command
+when 'check-latest'
+  Rf::Stylez::UpdateCheck.check
+when 'reek-config-path'
+  puts(Rf::Stylez.reek_config_path)
+else
+  STDERR.puts('Usage: rf-stylez [check-latest][reek-config-path]')
 end
 
-Rf::Stylez::UpdateCheck.check
