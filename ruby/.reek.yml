@@ -54,6 +54,9 @@ directories:
         - validate_param!
     InstanceVariableAssumption:
       enabled: false
+  "spec/mailers/previews":
+    UtilityFunction:
+      enabled: false
 
 exclude_paths:
   - db/
