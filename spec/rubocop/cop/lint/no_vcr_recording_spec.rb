@@ -4,7 +4,7 @@ describe RuboCop::Cop::Lint::NoVCRRecording do
   let(:config) { RuboCop::Config.new }
   subject(:cop) { described_class.new(config) }
 
-  it 'registers an offense when using vcr: { record: ... }' do
+  it "registers an offense when using vcr: { record: ... }" do
     expect_offense(<<~RUBY)
       describe Foo, vcr: { record: :new_episodes } do
                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Do not set :record option in VCR
@@ -19,7 +19,7 @@ describe RuboCop::Cop::Lint::NoVCRRecording do
     RUBY
   end
 
-  it 'handles multiple options passed to vcr' do
+  it "handles multiple options passed to vcr" do
     expect_offense(<<~RUBY)
       it 'works!', vcr: { tag: :workworkwork, record: :once } do
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Do not set :record option in VCR
@@ -34,7 +34,7 @@ describe RuboCop::Cop::Lint::NoVCRRecording do
     RUBY
   end
 
-  it 'does not register an offense when not using :record' do
+  it "does not register an offense when not using :record" do
     expect_no_offenses(<<~RUBY)
       context 'with no recording', vcr: true do
         specify { expect(true).to eq(true) }

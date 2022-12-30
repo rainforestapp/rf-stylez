@@ -11,9 +11,9 @@ module RuboCop
       #   MultiJson.load(...)
       #
       class NoJSON < Cop
-        MSG = 'Use `MultiJson` instead of `JSON`.'.freeze
+        MSG = "Use `MultiJson` instead of `JSON`."
 
-        def_node_matcher :is_JSON?, '(const nil? :JSON)'
+        def_node_matcher :is_JSON?, "(const nil? :JSON)"
 
         def on_const(node)
           return unless is_JSON?(node)
