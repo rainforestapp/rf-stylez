@@ -4,8 +4,6 @@ require 'json'
 require 'net/http'
 require 'logger'
 
-require 'semantic_versioning'
-
 module Rf
   module Stylez
     module UpdateCheck
@@ -13,9 +11,9 @@ module Rf
 
       def self.check
         logger = Logger.new(STDOUT)
-        current_version = SemanticVersioning::Version.new(VERSION)
+        current_version = Gem::Version.new(VERSION)
 
-        remote_version = SemanticVersioning::Version.new(
+        remote_version = Gem::Version.new(
           JSON.parse(Net::HTTP.get(RUBYGEMS_URL))['version']
         )
         if current_version >= remote_version
