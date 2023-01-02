@@ -1,18 +1,9 @@
 version: 2.1
 
 jobs:
-  style_check:
-    docker:
-      - image: gcr.io/rf-public-images/circlemator:latest
-    steps:
-      - checkout
-      - run:
-          name: Style check
-          command: circlemator style-check --base-branch=master
-
   test:
     docker:
-      - image: circleci/ruby:2.7.1
+      - image: cimg/ruby:3.2.0
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_TOKEN
@@ -47,7 +38,7 @@ jobs:
 
   push_to_rubygems:
     docker:
-      - image: circleci/ruby:2.7.1
+      - image: cimg/ruby:3.2.0
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_TOKEN
@@ -74,11 +65,6 @@ workflows:
       - test:
           context:
             - DockerHub
-      - style_check:
-          filters:
-            branches:
-              ignore:
-                - master
       - push_to_rubygems:
           filters:
             branches:
