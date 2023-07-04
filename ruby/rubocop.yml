@@ -180,6 +180,8 @@ Style/Documentation:
   Enabled: true
 Style/DocumentationMethod:
   Enabled: false
+Style/OpenStructUse:
+  Enabled: true
 
 Layout/LineLength:
   Enabled: true
