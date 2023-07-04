@@ -7,21 +7,21 @@ describe RuboCop::Cop::Lint::Obscure do
   it 'registers an offense when using flipflop' do
     expect_offense(<<~RUBY)
       puts 'foo' if 'a'..'b'
-                    ^^^^^^^^ Do not use the flipflop operator
+                    ^^^^^^^^ Lint/Obscure: Do not use the flipflop operator
     RUBY
   end
 
   it 'registers an offense when using eflipflop' do
     expect_offense(<<~RUBY)
       puts 'foo' if 'a'...'b'
-                    ^^^^^^^^^ Do not use the flipflop operator
+                    ^^^^^^^^^ Lint/Obscure: Do not use the flipflop operator
     RUBY
   end
 
   it 'registers an offense when using String#%' do
     expect_offense(<<~RUBY)
       puts 'foo' % 'bar'
-           ^^^^^^^^^^^^^ Do not use String#%
+           ^^^^^^^^^^^^^ Lint/Obscure: Do not use String#%
     RUBY
   end
 

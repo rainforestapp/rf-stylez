@@ -21,16 +21,16 @@ Gem::Specification.new do |spec|
   spec.executables   = ["rf-stylez"]
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "rubocop", "1.41.1"
-  spec.add_runtime_dependency "rubocop-rails", "2.17.4"
-  spec.add_runtime_dependency "rubocop-rspec", "2.16.0"
+  spec.add_runtime_dependency "rubocop", "1.54.1"
+  spec.add_runtime_dependency "rubocop-rails", "2.20.2"
+  spec.add_runtime_dependency "rubocop-rspec", "2.22.0"
   spec.add_runtime_dependency "reek", "~> 6.1"
   spec.add_runtime_dependency "get_env", "~> 0.2.0"
   spec.add_runtime_dependency "unparser", "~> 0.6"
   spec.add_runtime_dependency "pronto", "~> 0.11.1"
-  spec.add_runtime_dependency "pronto-rubocop", "~> 0.11.4"
+  spec.add_runtime_dependency "pronto-rubocop", "~> 0.11.5"
 
-  spec.add_development_dependency "bundler", "~> 2.1"
+  spec.add_development_dependency "bundler", "~> 2.4"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", ">= 3.4"
   spec.add_development_dependency "byebug"

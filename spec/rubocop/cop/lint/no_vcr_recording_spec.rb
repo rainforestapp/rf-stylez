@@ -7,7 +7,7 @@ describe RuboCop::Cop::Lint::NoVCRRecording do
   it 'registers an offense when using vcr: { record: ... }' do
     expect_offense(<<~RUBY)
       describe Foo, vcr: { record: :new_episodes } do
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Do not set :record option in VCR
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/NoVCRRecording: Do not set :record option in VCR
         include_examples 'all the networks!'
       end
     RUBY
@@ -22,7 +22,7 @@ describe RuboCop::Cop::Lint::NoVCRRecording do
   it 'handles multiple options passed to vcr' do
     expect_offense(<<~RUBY)
       it 'works!', vcr: { tag: :workworkwork, record: :once } do
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Do not set :record option in VCR
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/NoVCRRecording: Do not set :record option in VCR
         expect(let_me_google_that_for_you).to be_full_of_sass
       end
     RUBY

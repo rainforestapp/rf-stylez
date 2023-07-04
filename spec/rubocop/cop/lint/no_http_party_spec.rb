@@ -7,7 +7,7 @@ describe RuboCop::Cop::Lint::NoHTTParty do
   it 'registers an offense when using `HTTParty`' do
     expect_offense(<<~RUBY)
       HTTParty.get('foo')
-      ^^^^^^^^^^^^^^^^^^^ Prefer `TimedRequest` instead of raw `HTTParty` calls.
+      ^^^^^^^^^^^^^^^^^^^ Lint/NoHTTParty: Prefer `TimedRequest` instead of raw `HTTParty` calls.
     RUBY
   end
 
