@@ -9,7 +9,9 @@ permissions:
 
 jobs:
   pronto:
+
     runs-on: ubuntu-latest
+
     env:
       # `MAKE="make --jobs $(nproc)"` is from
       # https://build.betterup.com/one-weird-trick-that-will-speed-up-your-bundle-install/
@@ -20,18 +22,20 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-      # Set the depth to 100 and hope this won't fail for branches with a lot of little commits
-      - run: |
-          git fetch --no-tags --prune --depth=100 origin +refs/heads/*:refs/remotes/origin/*
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 100
+      - run: git fetch --no-tags --prune --depth=100 origin "+refs/heads/$GITHUB_BASE_REF:refs/remotes/origin/$GITHUB_BASE_REF"
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version:  "3.2.0"
-          # Run `bundle install` with cache when `true`
+          ruby-version:  "3.2.2"
           bundler-cache: true
+
       - name: Setup pronto
         run: gem install pronto pronto-rubocop
+
       - name: Run Pronto
         run: bundle exec pronto run -f github_status github_pr -c origin/${{ github.base_ref }}
         env:
