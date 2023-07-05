@@ -7,7 +7,7 @@ describe RuboCop::Cop::Lint::NoJSON do
   it 'registers an offense when using `#JSON`' do
     expect_offense(<<~RUBY)
       JSON
-      ^^^^ Use `MultiJson` instead of `JSON`.
+      ^^^^ Lint/NoJSON: Use `MultiJson` instead of `JSON`.
     RUBY
   end
 

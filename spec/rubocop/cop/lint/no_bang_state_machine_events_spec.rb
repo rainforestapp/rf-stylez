@@ -8,7 +8,7 @@ describe RuboCop::Cop::Lint::NoBangStateMachineEvents do
     expect_offense(<<~RUBY)
       state_machine :state do
         event :started! do
-        ^^^^^^^^^^^^^^^ Event names ending with a `!` define `!`-ended methods that do not raise
+        ^^^^^^^^^^^^^^^ Lint/NoBangStateMachineEvents: Event names ending with a `!` define `!`-ended methods that do not raise
           transition :queued => :in_progress
         end
       end

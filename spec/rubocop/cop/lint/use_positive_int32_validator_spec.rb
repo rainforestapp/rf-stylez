@@ -8,18 +8,18 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
     expect_offense(<<~RUBY)
       params :example_params do
         optional :id, type: Integer
-                      ^^^^^^^^^^^^^ If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+                      ^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
         optional :abc, type: String
         optional :edf, types: [String, Array[String]]
         optional :ghi, type: Hash, documentation: { hidden: true }
         optional :elements, type: Array, coerce_with: abcdefg do
           optional :zyx, type: Boolean
           optional :id, type: Integer
-                        ^^^^^^^^^^^^^ If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+                        ^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
           requires :type, type: String, values: ['123', 'abc']
           requires :element, type: Hash do
             optional :id, type: Integer
-                          ^^^^^^^^^^^^^ If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+                          ^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
             optional :action, type: String
             all_or_none_of :action, :response
           end
@@ -35,7 +35,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         expect_offense(<<~RUBY)
           params do
             #{method} :id, type: Integer, desc: 'Comment ID'
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
           end
         RUBY
       end
@@ -44,7 +44,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         expect_offense(<<~RUBY)
           params do
             #{method} :id, desc: 'Comment ID', type: Integer
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
           end
         RUBY
       end
@@ -53,7 +53,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         expect_offense(<<~RUBY)
         params do
           #{method} :id, type: Integer, desc: 'Comment ID'
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
           requires :text, type: String
         end
         RUBY
@@ -64,10 +64,10 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         params do
           requires :text, type: String
           #{method} :id, type: Integer, desc: 'Comment ID'
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
           requires :text, type: String
           requires :id2, type: Integer, desc: 'Comment ID'
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
         end
         RUBY
       end
@@ -76,7 +76,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         expect_offense(<<~RUBY)
         params :test do
           #{method} :id, type: Integer, desc: 'Comment ID'
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
         end
         RUBY
       end
