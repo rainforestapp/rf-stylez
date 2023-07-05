@@ -18,10 +18,10 @@ module RuboCop
       #     end
       #   end
       class NoBangStateMachineEvents < Cop
-        MSG = 'Event names ending with a `!` define `!`-ended methods that do not raise'
+        MSG = "Event names ending with a `!` define `!`-ended methods that do not raise"
 
-        def_node_matcher :is_state_machine_event?, '(send nil? :event (sym $_))'
-        def_node_matcher :is_state_machine?, '(block (send nil? :state_machine ...) ...)'
+        def_node_matcher :is_state_machine_event?, "(send nil? :event (sym $_))"
+        def_node_matcher :is_state_machine?, "(block (send nil? :state_machine ...) ...)"
 
         def on_send(node)
           return unless (event_name = is_state_machine_event?(node))

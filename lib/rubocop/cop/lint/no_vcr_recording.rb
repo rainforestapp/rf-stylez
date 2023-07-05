@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-require 'unparser'
+
+require "unparser"
 
 module RuboCop
   module Cop
@@ -15,7 +16,7 @@ module RuboCop
       class NoVCRRecording < RuboCop::Cop::Base
         extend AutoCorrector
 
-        MSG = 'Do not set :record option in VCR'.freeze
+        MSG = "Do not set :record option in VCR"
 
         def_node_search :is_only_setting_record_option?, <<~PATTERN
           (pair
@@ -48,7 +49,7 @@ module RuboCop
 
           add_offense(node) do |corrector|
             if is_only_setting_record_option?(node)
-              corrector.replace(node, 'vcr: true')
+              corrector.replace(node, "vcr: true")
             elsif is_setting_record_option?(node)
               corrector.replace(node, remove_record_option(node))
             end

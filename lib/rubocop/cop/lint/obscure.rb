@@ -20,7 +20,7 @@ module RuboCop
       #
       # https://ruby-doc.org/core-2.4.0/String.html#method-i-25
       class Obscure < Cop
-        MSG = 'Do not use the flipflop operator'.freeze
+        MSG = "Do not use the flipflop operator"
 
         def_node_matcher :is_stringformat?, <<-PATTERN
           (send {str dstr} $:% ...)
@@ -36,7 +36,7 @@ module RuboCop
 
         def on_send(node)
           return unless is_stringformat?(node)
-          add_offense(node, message: 'Do not use String#%')
+          add_offense(node, message: "Do not use String#%")
         end
       end
     end

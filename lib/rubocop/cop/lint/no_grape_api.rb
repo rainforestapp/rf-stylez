@@ -13,9 +13,9 @@ module RuboCop
       #   # good
       #   class Foo < Api::Base
       class NoGrapeAPI < Cop
-        MSG = 'Prefer inheriting `Api::AuthBase` or `Api::Base` instead of `Grape::API`.'.freeze
+        MSG = "Prefer inheriting `Api::AuthBase` or `Api::Base` instead of `Grape::API`."
 
-        def_node_matcher :inherits_Grape_API?, '(class (const ...) (const (const nil? :Grape) :API) ...)'
+        def_node_matcher :inherits_Grape_API?, "(class (const ...) (const (const nil? :Grape) :API) ...)"
 
         def on_class(node)
           return unless inherits_Grape_API?(node)
