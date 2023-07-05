@@ -4,7 +4,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
   let(:config) { RuboCop::Config.new }
   subject(:cop) { described_class.new(config) }
 
-  it 'handles a big params with nested params and such' do
+  it "handles a big params with nested params and such" do
     expect_offense(<<~RUBY)
       params :example_params do
         optional :id, type: Integer
@@ -40,7 +40,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         RUBY
       end
 
-      it 'handles different parameter orders' do
+      it "handles different parameter orders" do
         expect_offense(<<~RUBY)
           params do
             #{method} :id, desc: 'Comment ID', type: Integer
@@ -49,7 +49,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         RUBY
       end
 
-      it 'handles multiple arguments' do
+      it "handles multiple arguments" do
         expect_offense(<<~RUBY)
         params do
           #{method} :id, type: Integer, desc: 'Comment ID'
@@ -59,7 +59,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         RUBY
       end
 
-      it 'handles multiple arguments, in mixed order' do
+      it "handles multiple arguments, in mixed order" do
         expect_offense(<<~RUBY)
         params do
           requires :text, type: String
@@ -72,7 +72,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         RUBY
       end
 
-      it 'handles named params blocks' do
+      it "handles named params blocks" do
         expect_offense(<<~RUBY)
         params :test do
           #{method} :id, type: Integer, desc: 'Comment ID'
@@ -82,13 +82,13 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
       end
     end
 
-    it 'does not register an offense when not in a params block' do
+    it "does not register an offense when not in a params block" do
       expect_no_offenses(<<~RUBY)
         #{method} :id, type: Integer, desc: 'Comment ID'
       RUBY
     end
 
-    context 'does not register an offense when positive_int32 is true' do
+    context "does not register an offense when positive_int32 is true" do
       specify do
         expect_no_offenses(<<~RUBY)
           params :test do
@@ -97,7 +97,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
         RUBY
       end
 
-      it 'handles a bunch of arguments' do
+      it "handles a bunch of arguments" do
         expect_no_offenses(<<~RUBY)
           params :test do
             #{method} :id, type: Integer, desc: 'Comment ID', documentation: { blah: 'blah' }, positive_int32: true
@@ -106,7 +106,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
       end
     end
 
-    context 'does not register an offense when positive_int32 is false' do
+    context "does not register an offense when positive_int32 is false" do
       specify do
         expect_no_offenses(<<~RUBY)
           params :test do
@@ -116,7 +116,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
       end
     end
 
-    context 'does not register an offense when positive_int32 takes in a value' do
+    context "does not register an offense when positive_int32 takes in a value" do
       specify do
         expect_no_offenses(<<~RUBY)
           params :test do

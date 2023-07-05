@@ -10,9 +10,9 @@ module RuboCop
       #   # good
       #   TimedRequest.get(...)
       class NoHTTParty < Cop
-        MSG = 'Prefer `TimedRequest` instead of raw `HTTParty` calls.'.freeze
+        MSG = "Prefer `TimedRequest` instead of raw `HTTParty` calls."
 
-        def_node_matcher :is_HTTParty?, '(send (const nil? :HTTParty) ...)'
+        def_node_matcher :is_HTTParty?, "(send (const nil? :HTTParty) ...)"
 
         def on_send(node)
           return unless is_HTTParty?(node)

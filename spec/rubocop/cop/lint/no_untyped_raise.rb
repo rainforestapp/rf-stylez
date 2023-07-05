@@ -4,9 +4,9 @@ describe RuboCop::Cop::Lint::NoUntypedRaise do
   let(:config) { RuboCop::Config.new }
   subject(:cop) { described_class.new(config) }
 
-  describe 'untyped' do
-    context 'raise' do
-      it 'registers an offense' do
+  describe "untyped" do
+    context "raise" do
+      it "registers an offense" do
         expect_offense(<<~RUBY)
           def foo
             raise 'foo'
@@ -16,8 +16,8 @@ describe RuboCop::Cop::Lint::NoUntypedRaise do
       end
     end
 
-    context 'fail' do
-      it 'registers an offense' do
+    context "fail" do
+      it "registers an offense" do
         expect_offense(<<~RUBY)
           def foo
             fail 'foo'
@@ -28,9 +28,9 @@ describe RuboCop::Cop::Lint::NoUntypedRaise do
     end
   end
 
-  describe 'typed' do
-    context 'raise' do
-      it 'registers no offense' do
+  describe "typed" do
+    context "raise" do
+      it "registers no offense" do
         expect_no_offenses(<<~RUBY)
         def foo
           raise ArgumentError, 'foo'
@@ -39,8 +39,8 @@ describe RuboCop::Cop::Lint::NoUntypedRaise do
       end
     end
 
-    context 'fail' do
-      it 'registers no offense' do
+    context "fail" do
+      it "registers no offense" do
         expect_no_offenses(<<~RUBY)
         def foo
           fail ArgumentError, 'foo'
