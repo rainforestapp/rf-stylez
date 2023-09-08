@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "rubocop", "1.54.2"
   spec.add_runtime_dependency "rubocop-rails", "2.20.2"
-  spec.add_runtime_dependency "rubocop-rspec", "2.22.0"
+  spec.add_runtime_dependency "rubocop-rspec", "2.24.0"
   spec.add_runtime_dependency "reek", "~> 6.1"
   spec.add_runtime_dependency "get_env", "~> 0.2.0"
   spec.add_runtime_dependency "unparser", "~> 0.6"
