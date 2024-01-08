@@ -1,16 +1,10 @@
 require: rubocop-rails
 
-Rails/AddColumnIndex:
-  Enabled: true
-Rails/DuplicateAssociation:
-  Enabled: true
-Rails/Presence:
-  Enabled: true
-Rails/Present:
-  Enabled: true
-Rails/ReversibleMigration:
-  Enabled: true
-Rails/ReversibleMigrationMethodDefinition:
-  Enabled: true
-Rails/TransactionExitStatement:
-  Enabled: true
+Rails/I18nLocaleTexts:
+  Enabled: false
+Rails/ActionOrder:
+  Enabled: false
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+Rails/TimeZone:
+  Enabled: false
