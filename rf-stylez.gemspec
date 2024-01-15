@@ -1,4 +1,3 @@
-# coding: utf-8
 # frozen_string_literal: true
 
 lib = File.expand_path("../lib", __FILE__)
@@ -29,10 +28,4 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "unparser", "~> 0.6"
   spec.add_runtime_dependency "pronto", "~> 0.11.2"
   spec.add_runtime_dependency "pronto-rubocop", "~> 0.11.5"
-
-  spec.add_development_dependency "bundler", "~> 2.4"
-  spec.add_development_dependency "rake", "~> 13.1"
-  spec.add_development_dependency "rspec", ">= 3.12"
-  spec.add_development_dependency "byebug"
-  spec.add_development_dependency "rspec_junit_formatter"
 end

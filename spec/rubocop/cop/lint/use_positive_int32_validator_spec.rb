@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
-  let(:config) { RuboCop::Config.new }
   subject(:cop) { described_class.new(config) }
+
+  let(:config) { RuboCop::Config.new }
 
   it "handles a big params with nested params and such" do
     expect_offense(<<~RUBY)
@@ -30,7 +31,7 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
   end
 
   %w(requires optional).each do |method|
-    context 'registers an offense when not validating Integers in a Grape API `#{method}`' do
+    context "registers an offense when not validating Integers in a Grape API `#{method}`" do
       specify do
         expect_offense(<<~RUBY)
           params do
@@ -51,33 +52,33 @@ describe RuboCop::Cop::Lint::UsePositiveInt32Validator do
 
       it "handles multiple arguments" do
         expect_offense(<<~RUBY)
-        params do
-          #{method} :id, type: Integer, desc: 'Comment ID'
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
-          requires :text, type: String
-        end
+          params do
+            #{method} :id, type: Integer, desc: 'Comment ID'
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+            requires :text, type: String
+          end
         RUBY
       end
 
       it "handles multiple arguments, in mixed order" do
         expect_offense(<<~RUBY)
-        params do
-          requires :text, type: String
-          #{method} :id, type: Integer, desc: 'Comment ID'
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
-          requires :text, type: String
-          requires :id2, type: Integer, desc: 'Comment ID'
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
-        end
+          params do
+            requires :text, type: String
+            #{method} :id, type: Integer, desc: 'Comment ID'
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+            requires :text, type: String
+            requires :id2, type: Integer, desc: 'Comment ID'
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+          end
         RUBY
       end
 
       it "handles named params blocks" do
         expect_offense(<<~RUBY)
-        params :test do
-          #{method} :id, type: Integer, desc: 'Comment ID'
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
-        end
+          params :test do
+            #{method} :id, type: Integer, desc: 'Comment ID'
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Lint/UsePositiveInt32Validator: If this Integer maps to a postgres Integer column, validate with `positive_int32: true`
+          end
         RUBY
       end
     end

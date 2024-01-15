@@ -17,6 +17,7 @@ module RuboCop
 
         def on_send(node)
           return unless is_untyped_raise?(node)
+
           add_offense(node)
         end
       end
