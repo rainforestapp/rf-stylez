@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 describe RuboCop::Cop::Lint::NoGrapeAPI do
-  let(:config) { RuboCop::Config.new }
   subject(:cop) { described_class.new(config) }
+
+  let(:config) { RuboCop::Config.new }
 
   it "registers an offense when inheriting `Grape::API`" do
     expect_offense(<<~RUBY)
       class Foo < Grape::API
-      ^^^^^^^^^^^^^^^^^^^^^^ Prefer inheriting `Api::AuthBase` or `Api::Base` instead of `Grape::API`.
+      ^^^^^^^^^^^^^^^^^^^^^^ Lint/NoGrapeAPI: Prefer inheriting `Api::AuthBase` or `Api::Base` instead of `Grape::API`.
         puts('foo')
       end
     RUBY
@@ -21,7 +22,7 @@ describe RuboCop::Cop::Lint::NoGrapeAPI do
     RUBY
   end
 
-  it "does not register an offense when using `Api::AuthBase`" do
+  it "does not register an offense when using `Api::Base`" do
     expect_no_offenses(<<~RUBY)
       class Foo < Api::Base
         puts('foo')

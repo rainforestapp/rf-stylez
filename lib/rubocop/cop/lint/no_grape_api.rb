@@ -19,6 +19,7 @@ module RuboCop
 
         def on_class(node)
           return unless inherits_Grape_API?(node)
+
           add_offense(node)
         end
       end

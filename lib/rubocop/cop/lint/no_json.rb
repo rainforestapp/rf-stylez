@@ -17,6 +17,7 @@ module RuboCop
 
         def on_const(node)
           return unless is_JSON?(node)
+
           add_offense(node)
         end
       end

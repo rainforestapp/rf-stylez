@@ -36,6 +36,7 @@ module RuboCop
 
         def on_send(node)
           return unless is_stringformat?(node)
+
           add_offense(node, message: "Do not use String#%")
         end
       end

@@ -18,9 +18,9 @@ module RuboCop
 
         # check if the param is `requires` / `optional`
         def_node_search :find_params_hashes, <<~PATTERN
-        (send nil? {:requires :optional}
-          (sym _)
-          $(hash ...) ...)
+          (send nil? {:requires :optional}
+            (sym _)
+            $(hash ...) ...)
         PATTERN
         # check if hash contains `type: Integer`
         def_node_search :is_type_integer?, "(pair (sym :type) (const nil? :Integer))"
@@ -29,10 +29,9 @@ module RuboCop
 
         def on_block(node)
           return unless (hash = find_params_hashes(node))
+
           hash.each do |param|
-            if is_type_integer?(param) && !validates_integer?(param)
-              add_offense(param)
-            end
+            add_offense(param) if is_type_integer?(param) && !validates_integer?(param)
           end
         end
       end

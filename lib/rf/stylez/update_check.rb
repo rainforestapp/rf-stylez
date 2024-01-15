@@ -11,7 +11,7 @@ module Rf
       RUBYGEMS_URL = URI("https://rubygems.org/api/v1/gems/rf-stylez.json").freeze
 
       def self.check
-        logger = Logger.new(STDOUT)
+        logger = Logger.new($stdout)
         current_version = Gem::Version.new(VERSION)
 
         remote_version = Gem::Version.new(

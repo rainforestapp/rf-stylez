@@ -16,6 +16,7 @@ module RuboCop
 
         def on_send(node)
           return unless is_HTTParty?(node)
+
           add_offense(node)
         end
       end

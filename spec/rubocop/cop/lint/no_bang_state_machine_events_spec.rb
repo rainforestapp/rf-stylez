@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 describe RuboCop::Cop::Lint::NoBangStateMachineEvents do
-  let(:config) { RuboCop::Config.new }
   subject(:cop) { described_class.new(config) }
+
+  let(:config) { RuboCop::Config.new }
 
   it "registers event names ending with a !" do
     expect_offense(<<~RUBY)

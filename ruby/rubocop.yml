@@ -1,6 +1,7 @@
 AllCops:
   TargetRubyVersion: 3.2
-  DisabledByDefault: true
+  NewCops: enable
+  SuggestExtensions: false
   Include:
     - '**/*.rb'
     - '**/*.rake'
@@ -40,100 +41,13 @@ Lint/NoVCRRecording:
     - spec/**/*
 
 # Good style cops
-Layout/BlockAlignment:
-  Enabled: true
-Layout/EndAlignment:
-  Enabled: true
-Layout/DefEndAlignment:
-  Enabled: true
-Layout/ConditionPosition:
-  Enabled: true
-Layout/TrailingEmptyLines:
-  Enabled: true
-Layout/TrailingWhitespace:
-  Enabled: true
 Layout/EmptyLineBetweenDefs:
   Enabled: true
   EmptyLineBetweenClassDefs: false
-Layout/IndentationWidth:
-  Enabled: true
-Layout/AccessModifierIndentation:
-  Enabled: true
-Layout/ArrayAlignment:
-  Enabled: true
-Layout/HashAlignment:
-  Enabled: true
-Layout/ParameterAlignment:
-  Enabled: true
-Layout/CaseIndentation:
-  Enabled: true
-Layout/ClosingParenthesisIndentation:
-  Enabled: true
-Layout/CommentIndentation:
-  Enabled: true
-Layout/ElseAlignment:
-  Enabled: true
-Layout/EmptyLines:
-  Enabled: true
-Layout/EndOfLine:
-  Enabled: true
-Layout/ExtraSpacing:
-  Enabled: true
-Layout/InitialIndentation:
-  Enabled: true
-Layout/IndentationConsistency:
-  Enabled: true
-Layout/IndentationStyle:
-  Enabled: true
-Layout/FirstHashElementIndentation:
-  Enabled: true
-Layout/LeadingCommentSpace:
-  Enabled: true
-Layout/RescueEnsureAlignment:
-  Enabled: true
-Layout/SpaceBeforeFirstArg:
-  Enabled: true
-Layout/SpaceAfterColon:
-  Enabled: true
-Layout/SpaceAfterComma:
-  Enabled: true
-Layout/SpaceAfterMethodName:
-  Enabled: true
-Layout/SpaceBeforeBlockBraces:
-  Enabled: true
-Layout/SpaceBeforeComma:
-  Enabled: true
-Layout/SpaceInsideParens:
-  Enabled: true
 
-Naming/MethodName:
-  Enabled: true
-Naming/VariableName:
-  Enabled: true
-Naming/ClassAndModuleCamelCase:
-  Enabled: true
-Naming/ConstantName:
-  Enabled: true
-Naming/FileName:
-  Enabled: true
-
-Style/EndBlock:
-  Enabled: true
-Style/SpecialGlobalVars:
-  Enabled: true
-Style/GlobalVars:
-  Enabled: true
 Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always
-Style/BlockDelimiters:
-  Enabled: true
-Style/DefWithParentheses:
-  Enabled: true
-Style/MethodCallWithoutArgsParentheses:
-  Enabled: true
-Style/InfiniteLoop:
-  Enabled: true
 Style/StringLiterals:
   Description: 'Checks if uses of quotes match the configured preference.'
   StyleGuide: '#consistent-string-literals'
@@ -147,16 +61,6 @@ Style/StringLiterals:
   # If `true`, strings which span multiple lines using `\` for continuation must
   # use the same type of quotes on each line.
   ConsistentQuotesInMultiline: true
-Style/AndOr:
-  Enabled: true
-Style/Not:
-  Enabled: true
-Style/MutableConstant:
-  Enabled: true
-Style/HashSyntax:
-  Enabled: true
-Style/RedundantFreeze:
-  Enabled: true
 Style/TrailingCommaInArguments:
   Enabled: true
   EnforcedStyleForMultiline: no_comma
@@ -166,30 +70,12 @@ Style/TrailingCommaInArrayLiteral:
 Style/TrailingCommaInHashLiteral:
   Enabled: true
   EnforcedStyleForMultiline: consistent_comma
-Style/MultilineIfThen:
-  Enabled: true
-Style/Semicolon:
-  Enabled: true
-Style/SignalException:
-  Enabled: true
-Style/SymbolProc:
-  Enabled: true
-Style/RegexpLiteral:
-  Enabled: true
-Style/Documentation:
-  Enabled: true
-Style/DocumentationMethod:
-  Enabled: false
-Style/OpenStructUse:
-  Enabled: true
 
 Layout/LineLength:
   Enabled: true
   Max: 120
   AllowHeredoc: true
   AllowURI: true
-Layout/EmptyLineAfterMagicComment:
-  Enabled: true
 
 # Dumb lint cops
 Lint/AmbiguousOperator:
@@ -197,4 +83,66 @@ Lint/AmbiguousOperator:
 Lint/NonLocalExitFromIterator:
   Enabled: false
 Lint/AmbiguousRegexpLiteral:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false
+Naming/PredicateName:
+  Enabled: false
+Naming/HeredocDelimiterNaming:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/MessageSpies:
+  Enabled: false
+RSpec/StubbedMock:
+  Enabled: false
+RSpec/IndexedLet:
+  Enabled: false
+RSpec/LetSetup:
+  Enabled: false
+RSpec/ExpectChange:
+  Enabled: false
+RSpec/ContextWording:
+  Enabled: false
+RSpec/NestedGroups:
+  Enabled: false
+RSpec/MetadataStyle:
+  Enabled: false
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+RSpec/BeEq:
+  Enabled: false
+RSpec/AnyInstance:
+  Enabled: false
+
+Style/DocumentationMethod:
+  Enabled: false
+Style/SafeNavigation:
+  Enabled: false
+Style/PercentLiteralDelimiters:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
+Style/HashAsLastArrayItem:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
+Style/FormatString:
+  Enabled: false
+Style/FormatStringToken:
+  Enabled: false
+Style/MapToHash:
   Enabled: false
