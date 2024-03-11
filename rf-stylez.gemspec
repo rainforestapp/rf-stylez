@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.executables   = ["rf-stylez"]
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "rubocop", "1.59.0"
+  spec.add_runtime_dependency "rubocop", "1.62.1"
   spec.add_runtime_dependency "rubocop-rails", "2.23.1"
   spec.add_runtime_dependency "rubocop-rspec", "2.26.1"
   spec.add_runtime_dependency "reek", "~> 6.2"
