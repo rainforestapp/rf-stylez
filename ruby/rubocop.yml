@@ -44,7 +44,29 @@ Lint/NoVCRRecording:
 Layout/EmptyLineBetweenDefs:
   Enabled: true
   EmptyLineBetweenClassDefs: false
+Layout/LineLength:
+  Enabled: true
+  Max: 120
+  AllowHeredoc: true
+  AllowURI: true
+Layout/ArgumentAlignment:
+  Enabled: true
+  EnforcedStyle: with_fixed_indentation
+Layout/DotPosition:
+  Enabled: true
+  EnforcedStyle: leading
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
 
+RSpec/NotToNot:
+  Enabled: true
+  EnforcedStyle: to_not
+
+Style/Documentation:
+  Enabled: true
+  Exclude:
+    - 'db/migrate/*.rb'
 Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always
@@ -70,12 +92,9 @@ Style/TrailingCommaInArrayLiteral:
 Style/TrailingCommaInHashLiteral:
   Enabled: true
   EnforcedStyleForMultiline: consistent_comma
-
-Layout/LineLength:
+Style/StringLiteralsInInterpolation:
   Enabled: true
-  Max: 120
-  AllowHeredoc: true
-  AllowURI: true
+  EnforcedStyle: double_quotes
 
 # Dumb lint cops
 Lint/AmbiguousOperator:
@@ -85,7 +104,21 @@ Lint/NonLocalExitFromIterator:
 Lint/AmbiguousRegexpLiteral:
   Enabled: false
 
+Metrics/ClassLength:
+  Enabled: false
 Metrics/MethodLength:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+Metrics/ParameterLists:
   Enabled: false
 
 Naming/AccessorMethodName:
@@ -93,6 +126,10 @@ Naming/AccessorMethodName:
 Naming/PredicateName:
   Enabled: false
 Naming/HeredocDelimiterNaming:
+  Enabled: false
+Naming/RescuedExceptionsVariableName:
+  Enabled: false
+Naming/VariableNumber:
   Enabled: false
 
 RSpec/MultipleExpectations:
@@ -145,4 +182,6 @@ Style/FormatString:
 Style/FormatStringToken:
   Enabled: false
 Style/MapToHash:
+  Enabled: false
+Style/TrailingUnderscoreVariable:
   Enabled: false
