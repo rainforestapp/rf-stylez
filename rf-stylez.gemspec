@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-lib = File.expand_path("lib", __dir__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "rf/stylez/version"
 
@@ -28,5 +28,4 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "rubocop-rails", "2.24.1"
   spec.add_runtime_dependency "rubocop-rspec", "2.29.1"
   spec.add_runtime_dependency "unparser", "~> 0.6"
-  spec.metadata["rubygems_mfa_required"] = "true"
 end
