@@ -2,6 +2,6 @@
 
 module Rf
   module Stylez
-    VERSION = "1.2.0"
+    VERSION = "1.1.1"
   end
 end
