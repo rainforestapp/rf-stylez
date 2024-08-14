@@ -1,5 +1,5 @@
 AllCops:
-  TargetRubyVersion: 3.2
+  TargetRubyVersion: 3.3
   NewCops: enable
   SuggestExtensions: false
   Include:
@@ -20,6 +20,7 @@ inherit_from:
 require:
   - rf/stylez
   - rubocop-rspec
+  - rubocop-performance
   - get_env/cops
 
 # Custom cops
@@ -62,6 +63,8 @@ Layout/MultilineMethodCallIndentation:
 RSpec/NotToNot:
   Enabled: true
   EnforcedStyle: to_not
+RSpec/PredicateMatcher:
+  Enabled: false
 
 Style/Documentation:
   Enabled: true
@@ -70,6 +73,8 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always
+Style/NumericLiterals:
+  Enabled: false
 Style/StringLiterals:
   Description: 'Checks if uses of quotes match the configured preference.'
   StyleGuide: '#consistent-string-literals'
