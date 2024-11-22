@@ -35,7 +35,8 @@ jobs:
 
   push_to_rubygems:
     docker:
-      - image: cimg/ruby:3.3.6
+      # Push to rubygems breaks with Ruby 3.3
+      - image: cimg/ruby:3.2.2
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_TOKEN
