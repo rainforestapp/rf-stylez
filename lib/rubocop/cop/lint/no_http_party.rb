@@ -9,7 +9,7 @@ module RuboCop
       #
       #   # good
       #   TimedRequest.get(...)
-      class NoHTTParty < Cop
+      class NoHTTParty < Base
         MSG = "Prefer `TimedRequest` instead of raw `HTTParty` calls."
 
         def_node_matcher :is_HTTParty?, "(send (const nil? :HTTParty) ...)"

@@ -19,7 +19,7 @@ module RuboCop
       #   "%s" % "string"
       #
       # https://ruby-doc.org/core-2.4.0/String.html#method-i-25
-      class Obscure < Cop
+      class Obscure < Base
         MSG = "Do not use the flipflop operator"
 
         def_node_matcher :is_stringformat?, <<-PATTERN

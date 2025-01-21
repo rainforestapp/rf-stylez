@@ -13,7 +13,7 @@ module RuboCop
       #   params do
       #     requires :id, type: Integer, positive_int32: true
       #   end
-      class UsePositiveInt32Validator < Cop
+      class UsePositiveInt32Validator < Base
         MSG = "If this Integer maps to a postgres Integer column, validate with `positive_int32: true`"
 
         # check if the param is `requires` / `optional`
