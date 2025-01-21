@@ -10,7 +10,7 @@ module RuboCop
       #   # good
       #   MultiJson.load(...)
       #
-      class NoJSON < Cop
+      class NoJSON < Base
         MSG = "Use `MultiJson` instead of `JSON`."
 
         def_node_matcher :is_JSON?, "(const nil? :JSON)"

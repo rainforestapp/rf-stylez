@@ -12,7 +12,7 @@ module RuboCop
       #
       #   # good
       #   class Foo < Api::Base
-      class NoGrapeAPI < Cop
+      class NoGrapeAPI < Base
         MSG = "Prefer inheriting `Api::AuthBase` or `Api::Base` instead of `Grape::API`."
 
         def_node_matcher :inherits_Grape_API?, "(class (const ...) (const (const nil? :Grape) :API) ...)"

@@ -10,7 +10,7 @@ module RuboCop
       #   # good
       #   raise ArgumentError, 'foo'
       #
-      class NoUntypedRaise < Cop
+      class NoUntypedRaise < Base
         MSG = "Do not raise untyped exceptions, specify the error type so it can be rescued specifically."
 
         def_node_matcher :is_untyped_raise?, "(send nil? {:raise :fail} (str ...) ...)"
