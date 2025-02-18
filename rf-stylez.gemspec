@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "pronto", "~> 0.11.3"
   spec.add_runtime_dependency "pronto-rubocop", "~> 0.11.6"
   spec.add_runtime_dependency "reek", "~> 6.2"
-  spec.add_runtime_dependency "rubocop", "1.70.0"
+  spec.add_runtime_dependency "rubocop", "1.72.2"
   spec.add_runtime_dependency "rubocop-performance", "1.23.1"
   spec.add_runtime_dependency "rubocop-rails", "2.29.0"
   spec.add_runtime_dependency "rubocop-rspec", "3.4.0"
