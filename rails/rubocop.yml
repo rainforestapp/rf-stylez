@@ -6,8 +6,6 @@ Rails/ActionOrder:
   Enabled: false
 Rails/HasManyOrHasOneDependent:
   Enabled: false
-Rails/TimeZone:
-  Enabled: false
 Rails/ApplicationJob:
   Enabled: false
 Rails/HttpPositionalArguments:
