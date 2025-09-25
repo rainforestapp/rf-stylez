@@ -19,9 +19,11 @@ inherit_from:
 
 require:
   - rf/stylez
+  - get_env/cops
+
+plugins:
   - rubocop-rspec
   - rubocop-performance
-  - get_env/cops
 
 # Custom cops
 Lint/NoENV:
@@ -128,7 +130,7 @@ Metrics/ParameterLists:
 
 Naming/AccessorMethodName:
   Enabled: false
-Naming/PredicateName:
+Naming/PredicatePrefix:
   Enabled: false
 Naming/HeredocDelimiterNaming:
   Enabled: false
