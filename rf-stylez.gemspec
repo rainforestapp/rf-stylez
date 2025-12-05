@@ -21,12 +21,12 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "get_env", "~> 0.2.3"
-  spec.add_runtime_dependency "pronto", "~> 0.11.4"
+  spec.add_runtime_dependency "pronto", "~> 0.11.5"
   spec.add_runtime_dependency "pronto-rubocop", "~> 0.11.6"
   spec.add_runtime_dependency "reek", "~> 6.5"
-  spec.add_runtime_dependency "rubocop", "1.80.2"
-  spec.add_runtime_dependency "rubocop-performance", "1.26.0"
-  spec.add_runtime_dependency "rubocop-rails", "2.33.3"
-  spec.add_runtime_dependency "rubocop-rspec", "3.7.0"
+  spec.add_runtime_dependency "rubocop", "1.81.7"
+  spec.add_runtime_dependency "rubocop-performance", "1.26.1"
+  spec.add_runtime_dependency "rubocop-rails", "2.34.2"
+  spec.add_runtime_dependency "rubocop-rspec", "3.8.0"
   spec.add_runtime_dependency "unparser", "~> 0.8"
 end
