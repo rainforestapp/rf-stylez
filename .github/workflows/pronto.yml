@@ -30,7 +30,8 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version:  "3.4.6"
+          ruby-version:  "3.4.7"
+          bundler: "4.0.0"
           bundler-cache: true
 
       - name: Setup pronto
